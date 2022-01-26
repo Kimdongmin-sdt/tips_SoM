@@ -1,0 +1,34 @@
+{
+    "config": {
+        "trace-level": {
+            "help": "Options are TRACE_LEVEL_ERROR,TRACE_LEVEL_WARN,TRACE_LEVEL_INFO,TRACE_LEVEL_DEBUG",
+            "macro_name": "MBED_TRACE_MAX_LEVEL",
+            "value": "TRACE_LEVEL_DEBUG"
+        },
+        "wb55_uart_tx" : {
+            "help" : "SoM tx pin towards wb55"
+        },
+        "wb55_uart_rx" : {
+            "help" : "SoM rx pin towards wb55"
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate"                  : 115200,
+            "platform.stdio-convert-newlines"           : true,
+            "platform.error-filename-capture-enabled"   : true,
+            "platform.default-serial-baud-rate"         : 115200,
+            "platform.stdio-buffered-serial"            : true,
+            "rtos.main-thread-stack-size"               : 8192,
+            "rtos.thread-stack-size"                    : 8192,
+            "mbed-trace.enable"                         : true,
+            "mbed-trace.max-level"                      : "TRACE_LEVEL_ERROR"
+        },
+        "NUCLEO_F429ZI": {
+            "target.stdio_uart_tx": "PD_5",
+            "target.stdio_uart_rx": "PD_6",
+            "wb55_uart_tx": "PD_8",
+            "wb55_uart_rx": "PD_9"
+        }
+    }
+}
