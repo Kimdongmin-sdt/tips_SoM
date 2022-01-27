@@ -22,7 +22,7 @@
             "rtos.main-thread-stack-size"               : 8192,
             "rtos.thread-stack-size"                    : 8192,
             "mbed-trace.enable"                         : true,
-            "mbed-trace.max-level"                      : "TRACE_LEVEL_ERROR"
+            "mbed-trace.max-level"                      : "TRACE_LEVEL_DEBUG"
         },
         "NUCLEO_F429ZI": {
             "target.stdio_uart_tx": "PD_5",
