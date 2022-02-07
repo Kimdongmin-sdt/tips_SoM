@@ -179,6 +179,8 @@ void Thread_app_cmd()
 
 int main(void)
 {
+    ThisThread::sleep_for(5s);
+
     mbed_trace_init();
     printf(ANSI_COLOR_RESET);
     printf(ANSI_COLOR_MAGENTA"                                                      oMMMMM/  yhhhhh              \n");
@@ -218,8 +220,8 @@ int main(void)
             _console->read(&c, sizeof(c));
             tr_debug("read contents : %s\n", c);
             tr_debug("read from console!\n");
-#if 0
-            wb55_port.write(cmd_buffer, strlen(cmd_buffer));
+#if 1
+            wb55_port.write(&c, 1);
 #endif
             Thread_app_cmd();
         }
